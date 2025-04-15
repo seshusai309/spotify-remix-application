@@ -1,0 +1,84 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 10px;
+  left: 0;
+  height: 100vh;
+  width: 98px;
+  background-color: #040306;
+  z-index: 2;
+}
+
+.MobileHeader {
+  display: none;
+}
+
+.navbar img {
+  width: 77px;
+  height: 29px;
+}
+
+.logouticn {
+  color: #9b9b9b;
+  font-size: 58px;
+}
+.logout-para {
+  color: #9b9b9b;
+}
+
+.logout {
+  line-height: 0;
+}
+
+.cstmBtn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 567px) {
+  .navbar {
+    display: none;
+  }
+  .MobileHeader {
+    display: block;
+    height: max-content;
+    position: fixed;
+    padding: 10px;
+    background-color: #040306;
+    z-index: 2;
+    width: 100%;
+    transition: height 2s;
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+  }
+  .present {
+    display: none;
+  }
+  .MobileHeader img {
+    width: 64px;
+    height: 24px;
+  }
+  .cstmbar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cstmda {
+    margin: 10px 0px 10px 0px;
+  }
+  .cstmlogout {
+    border-width: 0px;
+    padding: 5px 10px 5px 10px;
+    background-color: #1db954;
+    border-radius: 5px;
+    color: aliceblue;
+  }
+}

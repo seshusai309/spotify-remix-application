@@ -1,0 +1,20 @@
+.head404 {
+  font-family: Roboto;
+  font-weight: 800;
+  font-size: 400px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  background: -webkit-linear-gradient(#1ed760, #00bc4300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.para {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: white;
+}

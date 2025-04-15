@@ -1,0 +1,144 @@
+.bg {
+  background-color: #181818;
+  padding-left: 150px;
+  padding-top: 45px;
+  height: max-content;
+  font-family: Roboto;
+}
+
+.headname {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0px;
+  color: white;
+  padding-left: 32px;
+}
+
+.cstm {
+  background-color: transparent;
+  border-width: 0px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 5px;
+  padding-left: 32px;
+}
+
+.showin-MobileView {
+  display: none;
+}
+
+.ulwave {
+  display: flex;
+  gap: 10px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  outline: none;
+  color: White;
+  flex-wrap: wrap;
+}
+
+.ulwave li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 15%;
+  margin-bottom: 20px;
+}
+
+.ulwave li img {
+  width: 166px;
+  height: 166px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.ulwave li h1 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.ulwave li p {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.cstm {
+  cursor: pointer;
+}
+
+.cstm p {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+@media screen and (max-width: 567px) {
+  .maintain {
+    display: none;
+  }
+  .bg {
+    background-color: #181818;
+    padding-left: 0px;
+    padding-top: 35px;
+    height: max-content;
+    font-family: Roboto;
+  }
+  .ulwave {
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 28px;
+    margin: 0px;
+    list-style-type: none;
+    outline: none;
+    color: White;
+    flex-wrap: nowrap;
+  }
+  .ulwave li {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-basis: 15%;
+    margin-bottom: 20px;
+  }
+  .mobilegenre {
+    display: none;
+  }
+  .mobilegenrepara {
+    display: none;
+  }
+  .showin-MobileView {
+    display: block flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .ulwave li h1 {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .ulwave li img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+  }
+}

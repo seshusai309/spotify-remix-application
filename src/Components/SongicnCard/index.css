@@ -1,0 +1,45 @@
+.songCard {
+  height: max-content;
+  width: 166px;
+}
+
+.songCard img {
+  width: 166px;
+  height: 166px;
+  border-radius: 8px;
+}
+
+.songCard h1 {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+a {
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 567px) {
+  .songCard {
+    width: 82px;
+  }
+  .songCard img {
+    width: 85px;
+    height: 85px;
+    border-radius: 4px;
+  }
+  .songCard h1 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
