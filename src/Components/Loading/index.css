@@ -6,3 +6,8 @@
   height: 100vh;
   background-color: #181818;
 }
+
+.loadingImage {
+  height: 80px;
+  width: 80px;
+}

@@ -106,12 +106,18 @@ class BottomPlayer extends Component {
                   src={imgUrl}
                   alt="Track Thumbnail"
                 />
-                <div className="trackdetails">
+                <div
+                  data-testid="trackdetailscontainer"
+                  className="trackdetails-container"
+                >
                   <p className="songNameheading">{track}</p>
                   <p className="songNamepara">{artist}</p>
                 </div>
               </div>
-              <div data-testid="trackDiv2" className="trackDiv2">
+              <div
+                data-testid="trackDiv2container"
+                className="trackDiv2-container"
+              >
                 <audio ref={this.audioRef} src={audioPlayer} preload="metadata">
                   <track
                     src="captions_en.vtt"
@@ -134,7 +140,10 @@ class BottomPlayer extends Component {
                   {this.formatTime(this.audioRef.current?.currentTime || 0)} /{' '}
                   {this.formatTime(duration)}
                 </p>
-                <div>
+                <div
+                  data-testid="progresscontainer"
+                  className="progress-container"
+                >
                   <input
                     type="range"
                     className="progressBar"
@@ -150,7 +159,10 @@ class BottomPlayer extends Component {
                   />
                 </div>
               </div>
-              <div data-testid="volumeControl" className="volumeControl">
+              <div
+                data-testid="volumeControlcontainer"
+                className="volumeControl-container"
+              >
                 <button type="button" className="volumeIcon">
                   {this.renderVolumeIcon()}
                 </button>

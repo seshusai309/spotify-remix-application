@@ -1,16 +1,11 @@
-import {Bars} from 'react-loader-spinner'
-
 import './index.css'
 
 const Loading = () => (
-  <div data-testid="LoadingView" className="LoadingView">
-    <Bars
-      height="80"
-      width="80"
-      color="#4fa94d"
-      ariaLabel="bars-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
+  <div data-testid="loader" className="LoadingView">
+    <img
+      className="loadingImage"
+      alt="loading"
+      src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"
     />
     <p>Loading...</p>
   </div>

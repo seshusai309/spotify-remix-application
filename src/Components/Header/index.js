@@ -31,12 +31,12 @@ class Header extends Component {
 
     return (
       <>
-        <nav className="navbar">
+        <nav data-testid="navbarcontainer" className="navbar-container">
           <img
             alt="website logo"
             src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"
           />
-          <div data-testid="logout" className="logout">
+          <div data-testid="logoutcontainer" className="logout-container">
             <button onClick={this.onLogout} className="cstmBtn" type="button">
               <IoMdLogOut className="logouticn" />
               <p className="logout-para">logout</p>
@@ -44,7 +44,7 @@ class Header extends Component {
           </div>
         </nav>
         <nav className="MobileHeader">
-          <div className="sub">
+          <div data-testid="subcontainer" className="sub-container">
             <img
               alt="logout"
               src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"

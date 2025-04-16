@@ -162,14 +162,20 @@ class NewReleaseDetails extends Component {
         }
 
         return (
-          <div className="newreleaseDetails-Container">
+          <div
+            data-testid="newreleaseDetailsContainer"
+            className="newreleaseDetails-Container"
+          >
             <button onClick={this.navigating} type="button" className="backed">
               <IoMdArrowRoundBack className="icn" />
               <p>Back</p>
             </button>
-            <div className="detailsSubmainContainer">
+            <div
+              data-testid="detailsSubmainContainer"
+              className="detailsSubmain-Container"
+            >
               <img alt="detailing" src={imageUrl} />
-              <div className="sideContent">
+              <div data-testid="sideContent" className="sideContent-container">
                 <p className="editHead">New Releases</p>
                 <h1 className="mainhead">{name}</h1>
                 <p className="subpara">{subPara}</p>

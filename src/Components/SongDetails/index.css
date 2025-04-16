@@ -25,27 +25,27 @@
   height: 24px;
 }
 
-.detailsSubmainContainer {
+.detailsSubmain-Container {
   display: flex;
   gap: 20px;
   width: 90%;
   padding-left: 52px;
 }
 
-.sideContent {
+.sideContent-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.detailsSubmainContainer img {
+.detailsSubmain-Container img {
   width: 295px;
   height: 295px;
   border-radius: 8px;
 }
 
-.main {
+.main-container {
   background-color: #181818;
   height: max-content;
   color: #ffffff;
@@ -132,7 +132,7 @@ hr {
   display: none;
 }
 
-.tada {
+.tada-container {
   height: 90vh;
   width: 80%;
   display: flex;
@@ -183,7 +183,7 @@ hr {
   .artistEached {
     display: none;
   }
-  .desktopOnly {
+  .desktopOnly-container {
     display: none;
   }
   .detailsSong-container {
@@ -196,13 +196,13 @@ hr {
     border-radius: 4px;
   }
 
-  .detailsSubmainContainer {
+  .detailsSubmain-Container {
     flex-direction: column;
     align-items: center;
     height: 250px;
     text-align: center;
   }
-  .sideContent {
+  .sideContent-container {
     align-items: center;
   }
   .editHead {

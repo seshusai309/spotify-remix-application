@@ -15,7 +15,7 @@
   transition: ease 3s;
 }
 
-.trackDiv2 {
+.trackDiv2-container {
   display: flex;
   align-items: center;
   font-family: Roboto;
@@ -85,7 +85,7 @@
   color: #9b9b9b;
 }
 
-.trackdetails {
+.trackdetails-container {
   line-height: 0.2;
   height: 80px;
   padding-top: 20px;
@@ -129,7 +129,7 @@
   transform: scale(1.2);
 }
 
-.volumeControl {
+.volumeControl-container {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -165,7 +165,7 @@
 }
 
 @media screen and (max-width: 567px) {
-  .volumeControl {
+  .volumeControl-container {
     display: none;
   }
   .trackDiv {
@@ -182,7 +182,7 @@
     display: flex;
     align-items: center;
   }
-  .trackDiv2 {
+  .trackDiv2-container {
     justify-content: flex-end;
     align-items: center;
     flex-basis: 5px;

@@ -63,12 +63,12 @@ class GenreDetails extends Component {
   renderSuccessView = () => {
     const {genresList} = this.state
     return (
-      <div data-testid="bg" className="bg">
+      <div data-testid="bgcontainer" className="bg-container">
         <button onClick={this.onclickgoback} type="button" className="cstm">
           <IoMdArrowRoundBack className="icn" />
           <p>Back</p>
         </button>
-        <div className="tadas">
+        <div data-testid="tadascontainer" className="tadas-container">
           <h1 className="headname">Podcast</h1>
           <ul className="ulwave">
             {genresList.map(each => (
@@ -76,7 +76,10 @@ class GenreDetails extends Component {
                 <img alt="wala" src={each.imageUrl} />
                 <h1 className="mobilegenre">{each.name}</h1>
                 <p className="mobilegenrepara">{`Total Tracks ${each.totalTracks}`}</p>
-                <div className="showin-MobileView">
+                <div
+                  data-testid="showinMobileView"
+                  className="showin-MobileView"
+                >
                   <h1 className="showin-MobileViewHead">{each.name}</h1>
                   <p>{`Total Tracks ${each.totalTracks}`}</p>
                 </div>
@@ -89,8 +92,8 @@ class GenreDetails extends Component {
   }
 
   renderfailureView = () => (
-    <div data-testid="failurecontainer" className="failurecontainer wala">
-      <div className="tada">
+    <div data-testid="failurecontainer" className="failurecontainer">
+      <div data-testid="tadacontainer" className="tada-container">
         <BsFillExclamationTriangleFill className="failureicn" />
         <p>Something went wrong. Please try again</p>
         <button onClick={() => this.getDetails()} type="button">
@@ -120,8 +123,8 @@ class GenreDetails extends Component {
     }
 
     return (
-      <div data-testid="main" className="main">
-        <div data-testid="maintain" className="maintain">
+      <div data-testid="maincontainer" className="main-container">
+        <div data-testid="maintaincontainer" className="maintain-container">
           <Header />
         </div>
         {a}

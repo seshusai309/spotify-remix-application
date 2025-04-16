@@ -1,15 +1,15 @@
-.songCard {
+.songCard-container {
   height: max-content;
   width: 166px;
 }
 
-.songCard img {
+.songCard-container img {
   width: 166px;
   height: 166px;
   border-radius: 8px;
 }
 
-.songCard h1 {
+.songCard-container h1 {
   font-family: Roboto;
   font-weight: 600;
   font-size: 16px;
@@ -27,15 +27,15 @@ a {
 }
 
 @media screen and (max-width: 567px) {
-  .songCard {
+  .songCard-container {
     width: 82px;
   }
-  .songCard img {
+  .songCard-container img {
     width: 85px;
     height: 85px;
     border-radius: 4px;
   }
-  .songCard h1 {
+  .songCard-container h1 {
     font-weight: 600;
     font-size: 12px;
     line-height: 100%;

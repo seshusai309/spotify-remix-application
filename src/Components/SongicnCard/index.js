@@ -36,7 +36,7 @@ const SongicnCard = props => {
 
   return (
     <Link to={paths}>
-      <li className="songCard">
+      <li data-testid="songCardcontainer" className="songCard-container">
         <img alt={altingValue} src={imgUrl} />
         <h1>{result}</h1>
       </li>

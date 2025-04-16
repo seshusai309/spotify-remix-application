@@ -1,8 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
-import {Bars} from 'react-loader-spinner'
-
 import Header from '../Header'
 import SongicnCard from '../SongicnCard'
 
@@ -168,19 +166,14 @@ class Home extends Component {
   )
 
   renderLoadingView = () => (
-    <div>
-      <div className="failurecontainer">
-        <div className="insideLoadingView">
-          <Bars
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="bars-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-          />
-          <p>Loading...</p>
-        </div>
+    <div data-testid="loader" className="failurecontainer">
+      <div className="insideLoadingView">
+        <img
+          className="loadingImage"
+          alt="loading"
+          src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"
+        />
+        <p>Loading...</p>
       </div>
     </div>
   )

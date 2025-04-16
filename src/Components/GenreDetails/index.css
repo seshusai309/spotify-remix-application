@@ -1,8 +1,9 @@
-.bg {
+.bg-container {
   background-color: #181818;
   padding-left: 150px;
   padding-top: 45px;
   height: max-content;
+  min-height: 100vh;
   font-family: Roboto;
 }
 
@@ -64,6 +65,10 @@
   text-align: center;
 }
 
+.failure-container {
+  height: 100vh;
+}
+
 .ulwave li p {
   color: #64748b;
   font-weight: 600;
@@ -88,14 +93,15 @@
 }
 
 @media screen and (max-width: 567px) {
-  .maintain {
+  .maintain-container {
     display: none;
   }
-  .bg {
+  .bg-container {
     background-color: #181818;
     padding-left: 0px;
     padding-top: 35px;
     height: max-content;
+    min-height: 100vh;
     font-family: Roboto;
   }
   .ulwave {

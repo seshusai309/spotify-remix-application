@@ -130,7 +130,7 @@ class SongDetails extends Component {
             artist: each.track.artists[0].name,
             audioPlayer: each.track.preview_url,
             trackNo: index + 1,
-            imgUrl: each.track.album.images[1].url,
+            imgUrl: each.track.album.images[2].url,
           }
         }),
       }
@@ -166,9 +166,15 @@ class SongDetails extends Component {
               <IoMdArrowRoundBack className="icn" />
               <p>Back</p>
             </button>
-            <div className="detailsSubmainContainer">
+            <div
+              data-testid="detailsSubmainContainer"
+              className="detailsSubmain-Container"
+            >
               <img alt="detailing" src={imgUrl} />
-              <div className="sideContent">
+              <div
+                data-testid="sideContentcontainer"
+                className="sideContent-container"
+              >
                 <p className="editHead">Editor&apos;s picks</p>
                 <h1 className="mainhead">{name}</h1>
                 <p className="subpara">{subPara}</p>
@@ -213,7 +219,7 @@ class SongDetails extends Component {
 
   renderfailureView = () => (
     <div className="failurecontainer wala">
-      <div className="tada">
+      <div data-testid="tadacontainer" className="tada-container">
         <BsFillExclamationTriangleFill className="failureicn" />
         <p>Something went wrong. Please try again</p>
         <button onClick={() => this.getDetails()} type="button">
@@ -243,8 +249,11 @@ class SongDetails extends Component {
     }
 
     return (
-      <div className="main">
-        <div className="desktopOnly">
+      <div data-testid="maincontainer" className="main-container">
+        <div
+          data-testid="desktopOnlycontainer"
+          className="desktopOnly-container"
+        >
           <Header />
         </div>
 
