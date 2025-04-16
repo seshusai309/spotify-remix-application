@@ -47,94 +47,23 @@ class NewReleaseDetails extends Component {
     const response = await fetch(url, options)
     if (response.ok) {
       const data = await response.json()
-      console.log(data)
-
-      const albumName = data.name
-      let result1
-
-      const quoteMatch = albumName.match(/"(.*?)"/) // Match text inside double quotes
-      if (quoteMatch) {
-        const quotedText = quoteMatch[1]
-        const dashIndex = quotedText.indexOf('-')
-        if (dashIndex !== -1) {
-          result1 = quotedText.substring(0, dashIndex).trim() // Extract text before the dash
-        } else {
-          result1 = quotedText.trim() // Use the full quoted text
-        }
-      } else {
-        const firstParenthesisIndex = albumName.indexOf('(')
-        const firstBracketIndex = albumName.indexOf('[')
-        let cutoffIndex
-
-        if (firstParenthesisIndex !== -1 && firstBracketIndex !== -1) {
-          cutoffIndex = Math.min(firstParenthesisIndex, firstBracketIndex)
-        } else if (firstParenthesisIndex !== -1) {
-          cutoffIndex = firstParenthesisIndex
-        } else if (firstBracketIndex !== -1) {
-          cutoffIndex = firstBracketIndex
-        } else {
-          cutoffIndex = -1 // No parenthesis or bracket found
-        }
-
-        if (cutoffIndex !== -1) {
-          result1 = albumName.substring(0, cutoffIndex).trim() // Extract text before cutoff
-        } else {
-          result1 = albumName.trim() // Use the full album name
-        }
-      }
 
       const updtatedData = {
         imageUrl: data.images[0].url,
         subPara: data.label,
-        name: result1,
+        name: data.name,
         popularity: data.popularity,
         artist: data.artists[0].name,
         tracksList: data.tracks.items.map((each, index) => {
           const minutes = Math.floor(each.duration_ms / 60000)
           const seconds = Math.floor((each.duration_ms % 60000) / 1000)
 
-          const originalAlbumName = each.name
-          let extractedResult
-
-          const quotedSegmentMatch = originalAlbumName.match(/"(.*?)"/) // Match text inside double quotes
-          if (quotedSegmentMatch) {
-            const quotedSegment = quotedSegmentMatch[1]
-            const dashPosition = quotedSegment.indexOf('-')
-            if (dashPosition !== -1) {
-              extractedResult = quotedSegment.substring(0, dashPosition).trim() // Extract text before the dash
-            } else {
-              extractedResult = quotedSegment.trim() // Use the full quoted text
-            }
-          } else {
-            const parenthesisPosition = originalAlbumName.indexOf('(')
-            const bracketPosition = originalAlbumName.indexOf('[')
-            let cutoffPosition
-
-            if (parenthesisPosition !== -1 && bracketPosition !== -1) {
-              cutoffPosition = Math.min(parenthesisPosition, bracketPosition)
-            } else if (parenthesisPosition !== -1) {
-              cutoffPosition = parenthesisPosition
-            } else if (bracketPosition !== -1) {
-              cutoffPosition = bracketPosition
-            } else {
-              cutoffPosition = -1 // No parenthesis or bracket found
-            }
-
-            if (cutoffPosition !== -1) {
-              extractedResult = originalAlbumName
-                .substring(0, cutoffPosition)
-                .trim() // Extract text before cutoff
-            } else {
-              extractedResult = originalAlbumName.trim() // Use the full album name
-            }
-          }
-
           return {
             duration: `${String(minutes).padStart(2, '0')}:${String(
               seconds,
             ).padStart(2, '0')}`,
             audioPlayer: each.preview_url,
-            track: extractedResult,
+            track: each.name,
             trackNo: index + 1,
             imgUrl: data.images[0].url,
             artist: each.artists[each.artists.length - 1].name,

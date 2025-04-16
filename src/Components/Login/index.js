@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 import './index.css'
 
 class Login extends Component {
-  state = {userdetais: '', passworddetails: ''}
+  state = {userdetais: '', passworddetails: '', errormsg: ''}
 
   changingusername = event => {
     this.setState({userdetais: event.target.value})
@@ -23,6 +23,7 @@ class Login extends Component {
 
   onSubmission = async event => {
     event.preventDefault()
+    this.setState({errormsg: ''})
     const {userdetais, passworddetails} = this.state
     const url = 'https://apis.ccbp.in/login'
 
@@ -32,14 +33,18 @@ class Login extends Component {
       body: JSON.stringify(details),
     }
     const response = await fetch(url, options)
+    console.log(response)
     if (response.ok) {
       const data = await response.json()
       console.log(data)
       this.submitedSuccess(data.jwt_token)
+    } else {
+      this.setState({errormsg: '*Enter Valid Details!'})
     }
   }
 
   render() {
+    const {userdetais, passworddetails, errormsg} = this.state
     const token = Cookies.get('jwt_token')
     if (token) {
       return <Redirect to="/" />
@@ -579,17 +584,20 @@ class Login extends Component {
             >
               <label htmlFor="username">Username</label>
               <input
+                value={userdetais}
                 onChange={this.changingusername}
                 id="username"
                 type="text"
               />
               <label htmlFor="Password">Password</label>
               <input
+                value={passworddetails}
                 onChange={this.changingpassword}
                 id="Password"
                 type="password"
               />
               <button type="submit">Login</button>
+              <p className="errorwala">{errormsg}</p>
             </form>
           </div>
         </div>

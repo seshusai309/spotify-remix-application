@@ -48,6 +48,7 @@ class GenreDetails extends Component {
     const response = await fetch(url, options)
     if (response.ok) {
       const data = await response.json()
+      console.log(data)
       const data2 = data.playlists.items.filter(each => each != null)
       const updatedData = data2.map(each => ({
         imageUrl: each.images[0].url,
@@ -75,13 +76,13 @@ class GenreDetails extends Component {
               <li key={each.name}>
                 <img alt="wala" src={each.imageUrl} />
                 <h1 className="mobilegenre">{each.name}</h1>
-                <p className="mobilegenrepara">{`Total Tracks ${each.totalTracks}`}</p>
+                <p className="mobilegenrepara">{`${each.totalTracks} Track`}</p>
                 <div
                   data-testid="showinMobileView"
                   className="showin-MobileView"
                 >
                   <h1 className="showin-MobileViewHead">{each.name}</h1>
-                  <p>{`Total Tracks ${each.totalTracks}`}</p>
+                  <p>{`${each.totalTracks} Tracks`}</p>
                 </div>
               </li>
             ))}

@@ -1,9 +1,10 @@
 .newreleaseDetails-Container {
   background-color: #181818;
-  height: 100vh;
+  max-height: max-content;
   color: white;
   padding-left: 98px;
   padding-top: 45px;
+  min-height: 100vh;
 }
 
 .newreleaseDetails-Container img {

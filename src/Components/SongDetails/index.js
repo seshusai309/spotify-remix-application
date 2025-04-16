@@ -65,68 +65,17 @@ class SongDetails extends Component {
           } else {
             publishedDate = `${days} days ago`
           }
-
-          const trackName = each.track.name
-          const dashPosition = trackName.indexOf('-') // Renamed from 'dashIndex' to 'dashPosition'
-          const parenthesisPosition = trackName.indexOf('(') // Renamed from 'parenthesisIndex'
-          const bracketPosition = trackName.indexOf('[') // Renamed from 'bracketIndex'
-
-          const cutoffPosition = Math.min(
-            parenthesisPosition !== -1 ? parenthesisPosition : Infinity,
-            bracketPosition !== -1 ? bracketPosition : Infinity,
-            dashPosition !== -1 ? dashPosition : Infinity,
-          )
-
-          const result =
-            cutoffPosition !== Infinity
-              ? trackName.substring(0, cutoffPosition).trim()
-              : trackName.trim()
-
           const minutes = Math.floor(each.track.duration_ms / 60000)
           const seconds = Math.floor((each.track.duration_ms % 60000) / 1000)
 
-          const albumName = each.track.album.name
-          let result1
-
-          const quoteMatch = albumName.match(/"(.*?)"/) // Match text inside double quotes
-          if (quoteMatch) {
-            const quotedText = quoteMatch[1]
-            const dashIndex = quotedText.indexOf('-')
-            if (dashIndex !== -1) {
-              result1 = quotedText.substring(0, dashIndex).trim() // Extract text before the dash
-            } else {
-              result1 = quotedText.trim() // Use the full quoted text
-            }
-          } else {
-            const firstParenthesisIndex = albumName.indexOf('(')
-            const firstBracketIndex = albumName.indexOf('[')
-            let cutoffIndex
-
-            if (firstParenthesisIndex !== -1 && firstBracketIndex !== -1) {
-              cutoffIndex = Math.min(firstParenthesisIndex, firstBracketIndex)
-            } else if (firstParenthesisIndex !== -1) {
-              cutoffIndex = firstParenthesisIndex
-            } else if (firstBracketIndex !== -1) {
-              cutoffIndex = firstBracketIndex
-            } else {
-              cutoffIndex = -1 // No parenthesis or bracket found
-            }
-
-            if (cutoffIndex !== -1) {
-              result1 = albumName.substring(0, cutoffIndex).trim() // Extract text before cutoff
-            } else {
-              result1 = albumName.trim() // Use the full album name
-            }
-          }
-
           return {
             addedAt: publishedDate,
-            track: result,
+            track: each.track.name,
             duration: `${String(minutes).padStart(2, '0')}:${String(
               seconds,
             ).padStart(2, '0')}`,
             popularity: each.track.popularity,
-            album: result1,
+            album: each.track.album.name,
             artist: each.track.artists[0].name,
             audioPlayer: each.track.preview_url,
             trackNo: index + 1,

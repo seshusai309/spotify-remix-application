@@ -30,15 +30,17 @@ class App extends Component {
     if (allItems !== null) {
       const {audioPlayer} = allItems
       const {isPlaying, prevsong} = this.state
-      if (audioPlayer !== prevsong) {
-        if (isPlaying) {
-          this.setState({
-            playingTrackUrl: allItems,
-            isPlaying: !isPlaying,
-            prevsong: audioPlayer,
-          })
-        } else {
-          this.setState({playingTrackUrl: allItems, prevsong: audioPlayer})
+      if (audioPlayer !== null) {
+        if (audioPlayer !== prevsong) {
+          if (isPlaying) {
+            this.setState({
+              playingTrackUrl: allItems,
+              isPlaying: !isPlaying,
+              prevsong: audioPlayer,
+            })
+          } else {
+            this.setState({playingTrackUrl: allItems, prevsong: audioPlayer})
+          }
         }
       }
     } else {

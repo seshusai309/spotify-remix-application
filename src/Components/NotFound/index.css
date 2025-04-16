@@ -18,3 +18,63 @@
   text-align: center;
   color: white;
 }
+
+.songCard-container {
+  height: max-content;
+  width: 166px;
+}
+
+.songCard-container img {
+  width: 166px;
+  height: 166px;
+  border-radius: 8px;
+}
+
+.songCard-container h1 {
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+a {
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 567px) {
+  .songCard-container {
+    width: 82px;
+  }
+  .songCard-container img {
+    width: 85px;
+    height: 85px;
+    border-radius: 4px;
+  }
+  .songCard-container h1 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+
+.sova {
+  width: 93px;
+  height: 40px;
+  gap: 8px;
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

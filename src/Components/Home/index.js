@@ -1,8 +1,8 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
+import {Link} from 'react-router-dom'
 import Header from '../Header'
-import SongicnCard from '../SongicnCard'
 
 import './index.css'
 
@@ -99,12 +99,15 @@ class Home extends Component {
         <h1>Editor’s picks</h1>
         <ul className="unorderlist">
           {editorsPickList.listed.map(each => (
-            <SongicnCard
-              altingValue="featured playlist"
-              type={editorsPickList.type}
-              key={each.id}
-              songsdetails={each}
-            />
+            <Link key={each.id} to={`/playlist/${each.id}`}>
+              <li
+                data-testid="songCardcontainer"
+                className="songCard-container"
+              >
+                <img alt="featured playlist" src={each.imgUrl} />
+                <h1>{each.name}</h1>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -118,12 +121,15 @@ class Home extends Component {
         <h1>Genres & Moods</h1>
         <ul className="unorderlist">
           {genresMoodList.listed.map(each => (
-            <SongicnCard
-              altingValue="category"
-              type={genresMoodList.type}
-              key={each.id}
-              songsdetails={each}
-            />
+            <Link key={each.id} to={`/category/${each.id}/playlists`}>
+              <li
+                data-testid="songCardcontainer"
+                className="songCard-container"
+              >
+                <img alt="category" src={each.imgUrl} />
+                <h1>{each.name}</h1>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -137,12 +143,15 @@ class Home extends Component {
         <h1>New releases</h1>
         <ul className="unorderlist">
           {newReleases.listed.map(each => (
-            <SongicnCard
-              altingValue="new release album"
-              type={newReleases.type}
-              key={each.id}
-              songsdetails={each}
-            />
+            <Link key={each.id} to={`/album/${each.id}`}>
+              <li
+                data-testid="songCardcontainer"
+                className="songCard-container"
+              >
+                <img alt="new release album" src={each.imgUrl} />
+                <h1>{each.name}</h1>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
