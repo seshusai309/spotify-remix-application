@@ -99,8 +99,8 @@ class BottomPlayer extends Component {
             return null
           }
           return (
-            <div className="trackDiv">
-              <div className="subTrackDiv">
+            <div data-testid="trackDiv" className="trackDiv">
+              <div data-testid="subTrackDiv" className="subTrackDiv">
                 <img
                   className="playingImg"
                   src={imgUrl}
@@ -111,7 +111,7 @@ class BottomPlayer extends Component {
                   <p className="songNamepara">{artist}</p>
                 </div>
               </div>
-              <div className="trackDiv2">
+              <div data-testid="trackDiv2" className="trackDiv2">
                 <audio ref={this.audioRef} src={audioPlayer} preload="metadata">
                   <track
                     src="captions_en.vtt"
@@ -150,7 +150,7 @@ class BottomPlayer extends Component {
                   />
                 </div>
               </div>
-              <div className="volumeControl">
+              <div data-testid="volumeControl" className="volumeControl">
                 <button type="button" className="volumeIcon">
                   {this.renderVolumeIcon()}
                 </button>

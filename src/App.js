@@ -66,21 +66,17 @@ class App extends Component {
       >
         <div>{Object.keys(playingTrackUrl).length > 0 ? a : null}</div>
         <Switch>
-          <ProtectedRoute exact path='/' component={Home} />
-          <Route exact path='/login' component={Login} />
-          <ProtectedRoute exact path='/song/:id' component={SongDetails} />
+          <ProtectedRoute exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <ProtectedRoute exact path="/playlist/:id" component={SongDetails} />
           <ProtectedRoute
             exact
-            path='/song/genres/:id'
+            path="/category/:id/playlists"
             component={GenreDetails}
           />
-          <Route
-            exact
-            path='/song/newrelease/:id'
-            component={NewReleaseDetails}
-          />
-          <ProtectedRoute path='/notfound' component={NotFound} />
-          <Redirect to='/notfound' />
+          <Route exact path="/album/:id" component={NewReleaseDetails} />
+          <ProtectedRoute path="/notfound" component={NotFound} />
+          <Redirect to="/notfound" />
         </Switch>
       </PlayerSongContext.Provider>
     )

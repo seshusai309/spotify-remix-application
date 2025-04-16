@@ -1,8 +1,11 @@
 import './index.css'
 
 const NotFound = () => (
-  <div className="LoadingView">
-    <h1 className="head404">404</h1>
+  <div data-testid="LoadingView" className="LoadingView">
+    <img
+      alt="page not found"
+      src="https://res.cloudinary.com/diptulwgs/image/upload/v1744777607/first%20project/404_1_hytesj.png"
+    />
     <p className="para">Page Not Found</p>
   </div>
 )

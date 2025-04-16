@@ -47,7 +47,7 @@ class Login extends Component {
 
     return (
       <div>
-        <div className="hola">
+        <div data-testid="hola" className="hola">
           <img
             alt="bg-image"
             style={{
@@ -566,13 +566,17 @@ class Login extends Component {
             }}
             src="https://s3-alpha-sig.figma.com/img/e9ab/a92c/49e0323b30f14ad832e9d171a992f24b?Expires=1745193600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OE9Y3qz1~EUfuIcH7~oSw9RkvjKS-OC-WhRBcQPWUmAKgbyO~WNTTcfcYJITlBnUORi9xgxwre7vZi2WaFR9HbkPWHpWjLRVNqxOHp66tZ6E0ULLfmFBPC1oX-ppZQtIekZuhrjDIVzWLSbDmkCBjUKbPNG55T1aYt3O7wyNuwZuU--VFc5AAL2DypBBauaVwADXzpmc69LF~2AGVGrZe1a3ygqLatwVmXfj32qER0OxjLki3MAIqN6m~8FYNwTM9vLDSwctOcWx9Tj6GuJrt51j6M5QiZ1V8K6hlCgKyPG~Ah6gSEgf837K9lFFa4qT6-etYbNaadKLIXo3lCqXwg__"
           />
-          <div className="login-Container">
+          <div data-testid="loginContainer" className="login-Container">
             <img
-              alt="headingimage"
+              alt="login website logo"
               src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"
             />
             <h1>Spotify Remix</h1>
-            <form onSubmit={this.onSubmission} className="form-container">
+            <form
+              data-testid="formcontainer"
+              onSubmit={this.onSubmission}
+              className="form-container"
+            >
               <label htmlFor="username">Username</label>
               <input
                 onChange={this.changingusername}

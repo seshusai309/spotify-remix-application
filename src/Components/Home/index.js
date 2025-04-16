@@ -1,7 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
-import {BsFillExclamationTriangleFill} from 'react-icons/bs'
 import {Bars} from 'react-loader-spinner'
 
 import Header from '../Header'
@@ -98,11 +97,12 @@ class Home extends Component {
   renderEditorsList = () => {
     const {editorsPickList} = this.state
     return (
-      <div className="editor-container">
+      <div data-testid="editorcontainer" className="editor-container">
         <h1>Editor’s picks</h1>
         <ul className="unorderlist">
           {editorsPickList.listed.map(each => (
             <SongicnCard
+              altingValue="featured playlist"
               type={editorsPickList.type}
               key={each.id}
               songsdetails={each}
@@ -116,11 +116,12 @@ class Home extends Component {
   renderGenresList = () => {
     const {genresMoodList} = this.state
     return (
-      <div className="editor-container">
+      <div data-testid="editorcontainer" className="editor-container">
         <h1>Genres & Moods</h1>
         <ul className="unorderlist">
           {genresMoodList.listed.map(each => (
             <SongicnCard
+              altingValue="category"
               type={genresMoodList.type}
               key={each.id}
               songsdetails={each}
@@ -134,11 +135,12 @@ class Home extends Component {
   renderNewReleaseList = () => {
     const {newReleases} = this.state
     return (
-      <div className="editor-container">
+      <div data-testid="editorcontainer" className="editor-container">
         <h1>New releases</h1>
         <ul className="unorderlist">
           {newReleases.listed.map(each => (
             <SongicnCard
+              altingValue="new release album"
               type={newReleases.type}
               key={each.id}
               songsdetails={each}
@@ -150,9 +152,13 @@ class Home extends Component {
   }
 
   renderfailureView = () => (
-    <div className="failurecontainer">
+    <div data-testid="failurecontainer" className="failurecontainer">
       <div className="insideCardfailure">
-        <BsFillExclamationTriangleFill className="failureicn" />
+        <img
+          alt="failure view"
+          className="failureicn"
+          src="https://res.cloudinary.com/diptulwgs/image/upload/v1744777620/first%20project/Icon_vy3pcg.png"
+        />
         <p>Something went wrong. Please try again</p>
         <button onClick={() => this.getDetials()} type="button">
           Try Again
@@ -232,7 +238,7 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <div className="home-container">
+        <div data-testid="homecontainer" className="home-container">
           {a}
           {b}
           {c}

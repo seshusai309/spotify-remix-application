@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './index.css'
 
 const SongicnCard = props => {
-  const {songsdetails, type} = props
+  const {songsdetails, type, altingValue} = props
   const {name, id, imgUrl} = songsdetails
   const trackName = name
 
@@ -25,19 +25,19 @@ const SongicnCard = props => {
   let paths
   switch (type) {
     case 'firstPick':
-      paths = `/song/${id}`
+      paths = `/playlist/${id}`
       break
     case 'secondPick':
-      paths = `/song/genres/${id}`
+      paths = `/category/${id}/playlists`
       break
     default:
-      paths = `/song/newrelease/${id}`
+      paths = `/album/${id}`
   }
 
   return (
     <Link to={paths}>
       <li className="songCard">
-        <img alt="icnSong" src={imgUrl} />
+        <img alt={altingValue} src={imgUrl} />
         <h1>{result}</h1>
       </li>
     </Link>

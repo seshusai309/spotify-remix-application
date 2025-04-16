@@ -3,7 +3,7 @@ import {Bars} from 'react-loader-spinner'
 import './index.css'
 
 const Loading = () => (
-  <div className="LoadingView">
+  <div data-testid="LoadingView" className="LoadingView">
     <Bars
       height="80"
       width="80"

@@ -63,7 +63,7 @@ class GenreDetails extends Component {
   renderSuccessView = () => {
     const {genresList} = this.state
     return (
-      <div className="bg">
+      <div data-testid="bg" className="bg">
         <button onClick={this.onclickgoback} type="button" className="cstm">
           <IoMdArrowRoundBack className="icn" />
           <p>Back</p>
@@ -73,7 +73,7 @@ class GenreDetails extends Component {
           <ul className="ulwave">
             {genresList.map(each => (
               <li key={each.name}>
-                <img src={each.imageUrl} />
+                <img alt="wala" src={each.imageUrl} />
                 <h1 className="mobilegenre">{each.name}</h1>
                 <p className="mobilegenrepara">{`Total Tracks ${each.totalTracks}`}</p>
                 <div className="showin-MobileView">
@@ -89,7 +89,7 @@ class GenreDetails extends Component {
   }
 
   renderfailureView = () => (
-    <div className="failurecontainer wala">
+    <div data-testid="failurecontainer" className="failurecontainer wala">
       <div className="tada">
         <BsFillExclamationTriangleFill className="failureicn" />
         <p>Something went wrong. Please try again</p>
@@ -120,8 +120,8 @@ class GenreDetails extends Component {
     }
 
     return (
-      <div className="main">
-        <div className="maintain">
+      <div data-testid="main" className="main">
+        <div data-testid="maintain" className="maintain">
           <Header />
         </div>
         {a}

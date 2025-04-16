@@ -33,10 +33,10 @@ class Header extends Component {
       <>
         <nav className="navbar">
           <img
-            alt="logout"
+            alt="website logo"
             src="https://res.cloudinary.com/diptulwgs/image/upload/v1744454422/first%20project/music_vpkci1.png"
           />
-          <div className="logout">
+          <div data-testid="logout" className="logout">
             <button onClick={this.onLogout} className="cstmBtn" type="button">
               <IoMdLogOut className="logouticn" />
               <p className="logout-para">logout</p>
